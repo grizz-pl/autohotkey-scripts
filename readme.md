@@ -2,4 +2,4 @@
 
 collected by Witold Firlej.
 
-Blog posts in polish at <https://www.grizz.pl/tags/ahk/>
+Blog posts in polish at <https://grizz.pl/tags/ahk/>
