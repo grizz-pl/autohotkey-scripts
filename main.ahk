@@ -1,6 +1,6 @@
 ; ---------
 ; Useful AutoHotkey actions collected by Witold Firlej.
-; Articles in polish at https://www.grizz.pl/tags/ahk/
+; Blog posts in polish at https://www.grizz.pl/tags/ahk/
 ; ---------
 
 ;; --------- hotstrings -------
