@@ -3,6 +3,8 @@
 ; Blog posts in polish at https://grizz.pl/tags/ahk/
 ; ---------
 
+SetCapsLockState, AlwaysOff ;; set CapsLock to be always off. Usefull for use it as moddifier
+
 ;; --------- hotstrings -------
 
 ::]gm::Good morning! ;; Good morning!
@@ -88,3 +90,49 @@ Return
 Return
 
 F1::Send {Ctrl Down}{PgUp}{Ctrl Up} ;;previous browser tab
+
+^#s::Suspend ;; Suspend Hotkeys. To resaume use option in tray menu
+
+
+CapsLock & q:: 	;; shortcut overwrite press `capslock`+`q` to get `CTRL`+`SHIFT`+`a`
+Send ^+a
+Return
+
+CapsLock & w:: 	;; shortcut overwrite press `capslock`+`w` to get `CTRL`+`SHIFT`+`o`
+Send ^+o
+Return
+
+CapsLock & 1::  ;; activate/run chrome and go to first tab
+IfWinActive ahk_exe chrome.exe
+	{
+	Send ^1
+	return
+	}
+IfWinExist ahk_exe chrome.exe
+	{
+	WinActivate
+	Send ^1
+	}
+else
+	{
+	Run C:\Program Files (x86)\Google\Chrome\Application\chrome.exe --profile-directory="Profile 1"
+	}
+return
+
+CapsLock & 2::  ;; activate/run chrome and go to second tab
+SetTitleMatchMode, 2 ; Find string anywhere in Windows Title. 1 - Win Title must starts with string. 3 - Windows Title must exactly match string.
+IfWinActive  Google Chrome
+	{
+	Send ^2
+	return
+	}
+IfWinExist  Google Chrome
+	{
+	WinActivate
+	Send ^2
+	}
+else
+	{
+	Run C:\Program Files (x86)\Google\Chrome\Application\chrome.exe --profile-directory="Profile 1"
+	}
+return
